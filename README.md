@@ -14,3 +14,13 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+---
+I am a second year Computer Science & Mathematics Student at UofT interested in:
+- Robotics
+- Control Theory
+- Optimization
+
+---
+I am currently the path planning lead at [UTFR](https://fsaeutoronto.ca/), where I design trajectory optimization algorithms for an autonomous electric vehicle that competes in Formula Student tournaments worldwide. 
+
+---
