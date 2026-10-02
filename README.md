@@ -23,6 +23,6 @@ I am a second year Computer Science & Mathematics Student at UofT interested in:
 ---
 I am currently the path planning lead at [UTFR](https://fsaeutoronto.ca/), where I design trajectory optimization algorithms for an autonomous electric vehicle that competes in Formula Student tournaments worldwide. 
 
-https://github.com/user-attachments/assets/2528904b-7775-4585-a7a9-b1595569b0a1
+https://github.com/user-attachments/assets/74a00103-30ce-4545-875a-20c513a1045a
 
 ---
