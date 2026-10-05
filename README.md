@@ -25,15 +25,16 @@ A distributed web-scraping framework in Python (asyncio, Redis). It separates sc
 - **Multi-stage pipelines:** a parser's output can spawn follow-up tasks, so flows like search → filter → fetch details are declared rather than hand-orchestrated.
 - **Pluggable by contract:** `BaseParser`, `BaseAuth`, and swappable HTTP backends (aiohttp, or curl_cffi for browser TLS impersonation).
 - **Per-stage rate limiting:** each endpoint is throttled independently, with a Redis sliding-window limiter for fleet-wide caps.
+  
 [Source](https://github.com/berzinan/scrapecore)
 
 ### Pokerface
 A no-limit Texas Hold'em engine in Java, built for writing poker bots and finding out how good they are. The engine owns dealing, betting, side pots and showdown, and hands each bot a restricted view of the table. You implement one method per bot, and the framework runs it — against other bots to rank them, or against a human at a tournament table.
 
 - **Information-restricted agent interface:** a bot receives an immutable `PlayerView` holding its own cards, the board, stacks, bets and a deck count — never the deck itself, and never another player's hand.
-- **Correct in the awkward cases:** side pots derived per all-in threshold with eligibility resolved pot by pot, minimum-raise enforcement including the short all-in exception, the live odd-chip rule for split pots, heads-up blind reversal and burn cards before every street.
-- **Per-decision move timer:** each decision runs against a wall-clock budget. An agent is told how long it has and sizes its own work to fit; an overrun is discarded and replaced with check-if-free-else-fold, so a slow bot loses its turn instead of stalling the table. Benchmark runs measure decision latency without enforcing it.
-- **Two measurement pipelines:** fixed-stack ring batches report bb/100 with standard errors, which is what actually separates two bots; escalating-blind tournaments report win rate under elimination, which is what a human would experience. Seat permutations are redrawn every N hands, and seed-driven bots are periodically rebuilt from a fresh seed to ensure statistical fairness.
+- **Human play at the terminal:** sit down against any mix of bots and act with `fold`, `check`, `call`, `raise <amount>` or `allin`. Every turn prints the board, the pot, what you owe and each seat's stack and status. Illegal commands are rejected and re-prompted, and showdowns are narrated with each player's hole cards and their best hand named in full.
+- **Per-decision move timer:** each decision runs against a wall-clock budget. An agent is told how long it has and sizes its own work to fit. Humans also get a move timer!
+- **Two measurement pipelines:** fixed-stack ring batches report bb/100 with standard errors, which is what actually separates two bots. Escalating-blind tournaments report win rate under elimination, which is what a human would experience. Seat permutations are redrawn every N hands, and seed-driven bots are periodically rebuilt from a fresh seed to ensure statistical fairness.
 - **Single-pass hand evaluation:** rank counts, flush suit and straight detection all fall out of one sweep over the cards, with straights found by shifting a rank bitmask and the ace mirrored low to fold the wheel into the ordinary case. Sustains ~4,500 hands/second single-threaded, six-handed, at 300 Monte Carlo rollouts per decision.
 - **In development:** More bots, AI bots, and a GUI!
 
