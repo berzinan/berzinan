@@ -1,19 +1,6 @@
 ## Hi there 👋
 
-<!--
-**berzinan/berzinan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
 ---
 I am a second year Computer Science & Mathematics Student at UofT interested in:
 - Robotics
@@ -26,3 +13,11 @@ I am currently the path planning lead at [UTFR](https://fsaeutoronto.ca/), where
 https://github.com/user-attachments/assets/74a00103-30ce-4545-875a-20c513a1045a
 
 ---
+
+## Projects
+
+#### Scrapecore
+
+
+#### Pokerface
+
